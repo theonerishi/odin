@@ -1,6 +1,6 @@
 console.log("Hello World!");
 function getComputerChoice() {
-    int rnd = Math.floor(Math.random() * 3);
+    let rnd = Math.floor(Math.random() * 3);
     switch(rnd) {
         case 0:
             return "rock";
@@ -11,11 +11,18 @@ function getComputerChoice() {
         default:
             return "rock";
     }
-    console.log("Computer choice: " + getComputerChoice());
 }
 function getHumanChoice() {
     let humanChoice = prompt("Enter rock, paper, or scissors:");
-    console.log("Human choice: " + humanChoice());
+    return humanChoice;
+}
+function humanWins() {
+    humanScore += 1;
+    alert("human won this round");
+}
+function computerWins() {
+    computerScore += 1;
+    alert("computer wins this round");
 }
 let humanScore = 0;
 let computerScore = 0;
@@ -23,17 +30,17 @@ function playRound() {
     let humanSelection = getHumanChoice().toLowerCase();
     let computerSelection = getComputerChoice().toLowerCase();
     if (humanSelection == "rock" && computerSelection == "paper") {
-        computerScore += 1;
+        computerWins();
     } else if (humanSelection == "paper" && computerSelection == "rock") {
-        humanScore += 1;
+        humanWins();
     } else if (humanSelection == "paper" && computerSelection == "scissors") {
-        computerScore += 1;
+        computerWins();
     } else if (humanSelection == "scissors" && computerSelection == "paper") {
-        humanScore += 1;
+        humanWins();
     } else if (humanSelection == "rock" && computerSelection == "scissors") {
-        humanScore += 1;
+        humanWins();
     } else if (humanSelection == "scissors" && computerSelection == "rock") {
-        computerScore += 1;
+        computerWins();
     } else {
 
     }
@@ -43,10 +50,11 @@ function playGame() {
         playRound();
     }
     if(humanScore > computerScore) {
-        alert("human wins");
+        alert("human wins the game");
     } else if (computerScore > humanScore) {
-        alert("computer wins");
+        alert("computer wins the game");
     } else {
         alert("tie");
     }
 }
+playGame();
