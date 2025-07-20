@@ -1,4 +1,3 @@
-console.log("Hello World!");
 function getComputerChoice() {
     let rnd = Math.floor(Math.random() * 3);
     switch(rnd) {
@@ -12,24 +11,28 @@ function getComputerChoice() {
             return "rock";
     }
 }
-function getHumanChoice() {
-    let humanChoice = prompt("Enter rock, paper, or scissors:");
-    return humanChoice;
-}
+let humanScore = 0;
+let computerScore = 0;
+let div = document.querySelector("div");
 function humanWins() {
     humanScore += 1;
-    alert("human won this round");
+    div.innerText += "Human won this round\n";
 }
 function computerWins() {
     computerScore += 1;
-    alert("computer wins this round");
+    div.innerText += "Computer won this round\n";
 }
-let humanScore = 0;
-let computerScore = 0;
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
+let humanSelection = "";
+let roundCounter = 0;
 function playRound() {
-    let humanSelection = getHumanChoice().toLowerCase();
     let computerSelection = getComputerChoice().toLowerCase();
-    if (humanSelection == "rock" && computerSelection == "paper") {
+    div.innerText += "Human Selection: " + humanSelection + "\nComputer Selection: " + computerSelection + "\n";
+    if (humanSelection == computerSelection) {
+        div.innerText += "It was a tie\n";
+    } else if (humanSelection == "rock" && computerSelection == "paper") {
         computerWins();
     } else if (humanSelection == "paper" && computerSelection == "rock") {
         humanWins();
@@ -41,20 +44,31 @@ function playRound() {
         humanWins();
     } else if (humanSelection == "scissors" && computerSelection == "rock") {
         computerWins();
-    } else {
+    }
 
+    roundCounter++;
+    if(roundCounter == 5) {
+        div.innerText += "Human Score: " + humanScore + "\nComputer Score: " + computerScore + "\n"; 
+        if(humanScore > computerScore) {
+            div.innerText += "Human wins the game\n";
+        } else if (computerScore > humanScore) {
+            div.innerText += "Computer wins the game\n";
+        } else {
+            div.innerText += "This game is a tie\n";
+        }
     }
 }
-function playGame() {
-    for (let i = 0; i < 3; i++) {
-        playRound();
-    }
-    if(humanScore > computerScore) {
-        alert("human wins the game");
-    } else if (computerScore > humanScore) {
-        alert("computer wins the game");
-    } else {
-        alert("tie");
-    }
-}
-playGame();
+rock.addEventListener("click", () => {
+    humanSelection = "rock";
+    playRound();
+})
+paper.addEventListener("click", () => {
+    humanSelection = "paper";
+    playRound();
+})
+scissors.addEventListener("click", () => {
+    humanSelection = "scissors";
+    playRound();
+})
+
+
