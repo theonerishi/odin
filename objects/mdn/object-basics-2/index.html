@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let bandInfo;
+
+    // Add your code here
+
+    let band = {
+      name: 'Band Name',
+      nationality: 'Country',
+      genre: 'Genre',
+      members: ['Member 1', 'Member 2'],
+      formed: 2000,
+      split: 2020,
+      albums: [
+        {
+          title: 'Album 1',
+          released: 2020
+        },
+        {
+          title: 'Album 2',
+          released: 2021
+        }
+        
+      ]
+    }
+    let dateOfFirstAlbum = 5000;
+    for (let album of band.albums) {
+      if (album.released < dateOfFirstAlbum) {
+        dateOfFirstAlbum = album.released;
+      }
+    }
+    let bandInfo = `${band.name} is a band from ${band.nationality} that was active for ${band.split - band.formed} years. They play ${band.genre} music and their first album was released in ${dateOfFirstAlbum}.`
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+
+</html>
