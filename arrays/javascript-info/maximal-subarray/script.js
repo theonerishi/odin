@@ -8,7 +8,7 @@ function getMaxSubSum(arr) {
                 sum += arr[j];
             }
             console.log(`sum is ${sum}`);
-            console.log(`max is ${max}`)
+            console.log(`max is ${max}`);
             if (sum > max) {
                 console.log(`sum is greater than max`);
                 max = sum;
