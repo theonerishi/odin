@@ -6,4 +6,4 @@ let strings = ["Hare", "Krishna", "Hare", "Krishna",
   "Krishna", "Krishna", "Hare", "Hare", ":-O"
 ];
 
-console.log(unique(strings))
+console.log(unique(strings));
