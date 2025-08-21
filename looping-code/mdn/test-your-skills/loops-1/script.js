@@ -8,6 +8,6 @@ section.appendChild(list);
 // Add your code here
 
 for (item of myArray) {
-   list.innerHTML += '<li>' + item + '</li>';
+   list.innerHTML += '<li>' + item + '</li>'; // for each item add to list
 }
 

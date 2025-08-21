@@ -15,7 +15,7 @@ function isPrime(num) {
 // Add your code here
 while (i > 2) {
     if (isPrime(i)) {
-        para.innerHTML += i + "<br>";
+        para.innerHTML += i + "<br>"; // for each number up to n find if prime and if prime add to list
     }
     i--;
 }

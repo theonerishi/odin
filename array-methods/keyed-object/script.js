@@ -5,7 +5,7 @@ let users = [
 ];
 
 let usersById = users.reduce((obj, user) => {
-    obj[user.id] = user;
+    obj[user.id] = user; // key for new object is user id and returns object
     return obj;
 }, {});
 

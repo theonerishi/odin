@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    let rnd = Math.floor(Math.random() * 3);
+    let rnd = Math.floor(Math.random() * 3); // find a random number between 0 up to but not including 3
     switch(rnd) {
         case 0:
             return "rock";
@@ -9,7 +9,7 @@ function getComputerChoice() {
             return "scissors";
         default:
             return "rock";
-    }
+    } // make computer choice based on random value generated
 }
 let humanScore = 0;
 let computerScore = 0;
@@ -21,16 +21,16 @@ function humanWins() {
 function computerWins() {
     computerScore += 1;
     div.innerText += "Computer won this round\n";
-}
+} // if computer / human wins increment score and display message
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
-let scissors = document.querySelector("#scissors");
+let scissors = document.querySelector("#scissors"); // select buttons
 let humanSelection = "";
 let roundCounter = 0;
 function playRound() {
     let computerSelection = getComputerChoice().toLowerCase();
-    div.innerText += "Human Selection: " + humanSelection + "\nComputer Selection: " + computerSelection + "\n";
-    if (humanSelection == computerSelection) {
+    div.innerText += "Human Selection: " + humanSelection + "\nComputer Selection: " + computerSelection + "\n"; // display choices
+    if (humanSelection == computerSelection) { // game logic using if statements
         div.innerText += "It was a tie\n";
     } else if (humanSelection == "rock" && computerSelection == "paper") {
         computerWins();
@@ -56,7 +56,7 @@ function playRound() {
         } else {
             div.innerText += "This game is a tie\n";
         }
-    }
+    } // display who won after counter reaches value
 }
 rock.addEventListener("click", () => {
     humanSelection = "rock";
@@ -69,6 +69,6 @@ paper.addEventListener("click", () => {
 scissors.addEventListener("click", () => {
     humanSelection = "scissors";
     playRound();
-})
+}) // when button clicked make human selection and play round
 
 

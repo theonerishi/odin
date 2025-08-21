@@ -12,18 +12,18 @@ h2 {
 nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; /* center items vertically and horizontally */
 
 }
 nav ul {
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 40%;  /* center list and take up 40% of the space */
 }
 nav ul li {
     list-style-type: none;
     font-size: 18px; 
-    color: #e5e7eb;
+    color: #e5e7eb; /* remove bullet points and adjust sizing and color */
 }
 .hero {
     font-size: 48px;
@@ -35,7 +35,7 @@ button {
 #section1 {
     background-color: #1f2937;
     width: 100%;
-    height: 25%;
+    height: 25%; /* sections take up 100% of width */
 }
 #section2 {
     background-color: #f9faf8;
@@ -44,7 +44,7 @@ button {
     color: #1f2937;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* center items */
     font: 18px #1f2937 Roboto;
 }
 
@@ -53,7 +53,7 @@ button {
     padding: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; /* display boxes in row */
     border-radius: 5px;
 }
 
@@ -62,7 +62,7 @@ button {
     flex-direction: column;
     width: 25%;
     align-items: center;
-    box-sizing: border-box;
+    box-sizing: border-box; /* to allow elements to fit in the row */
     font-size: 18px;
     color: #1f2937;
 }
@@ -76,7 +76,7 @@ button {
     justify-content: space-around;
     align-items: center;
     height: 25vh;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 .box-cover p {

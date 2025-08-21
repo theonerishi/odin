@@ -18,10 +18,14 @@ section.appendChild(para);
 // Don't edit the code above here!
 
 // Add your code here
-for (let person of phonebook) {
+const findName = (name, phonebook) => {
+  for (let person of phonebook) {
     if (person.name == name) {
-        para.innerText = `${name} has the number ${person.number}`;
-        exit;
+      para.innerText = `${name} has the number ${person.number}`;
+      return;
     }
+  }
+  para.innerText = `${name} is not in the phonebook`;
 }
-para.innerText = `${name} is not in the phonebook`;
+
+findName("Mustafa", phonebook);

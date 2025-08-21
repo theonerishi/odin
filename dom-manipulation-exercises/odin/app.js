@@ -1,4 +1,4 @@
-let p = document.createElement("p")
+let p = document.createElement("p") // practice with adding elements
 p.textContent = "Hey, I'm red";
 p.style.color = "red";
 document.body.appendChild(p);

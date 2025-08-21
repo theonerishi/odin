@@ -17,7 +17,7 @@ refused.innerHTML = "Refuse: <br>";
 
 // loop starts here
 for (person of people) {
-    if (person == 'Lola' || person == 'Phil') {
+    if (person == 'Lola' || person == 'Phil') { // if lola or phil then add to refused otherwise add to admitted
         refused.innerText += person + '\n';
     } else {
         admitted.innerText += person + '\n';
